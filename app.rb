@@ -10,7 +10,7 @@ require_relative "lib/matcher"
 class App
   def initialize(filename)
     @transactions = File.readlines(filename, chomp: true)
-    @merchants = Data::MERCHANTS.clone
+    @merchants = Data::MERCHANTS.dup
   end
 
   def call
@@ -38,7 +38,7 @@ class App
   def build_merchant(tokens)
     Merchant.new(
       tokens.first, # naiively assume the first token can act as a key
-      "UNKNOWN #{tokens.first.upcase}",
+      "UNKNOWN #{tokens.first.value.upcase}",
       tokens.filter { |t| t.type == :domain }.map(&:value),
       tokens.filter { |t| t.type == :literal }.map(&:value),
     )

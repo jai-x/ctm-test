@@ -10,6 +10,8 @@ class Matcher
   def match(tokens)
     raise "No Tokens!" if tokens.empty?
 
+    return nil if @merchant_matches.empty?
+
     return @merchant_matches.first if @merchant_matches.length == 1
 
     @merchant_matches
