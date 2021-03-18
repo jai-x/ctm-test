@@ -29,15 +29,6 @@ Invoke test suite with `rspec`
 ```shell
 $ bundle exec rspec
 ```
-## story
-
-> As a user, when looking at my transactions, I would like to know which
-> merchant it belongs to so I can understand my spending.
-> Acceptance Criteria:
-> * A description is matched to a merchant if merchant exists in the database
-> * If merchant does not exist, a new merchant is created with a name of
-    "unknown" and the transaction assigned to the new merchant
-
 ## notes
 
 This seems like a weird problem where the bulk of the work is trying to mangle
